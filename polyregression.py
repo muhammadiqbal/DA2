@@ -21,7 +21,6 @@ b = tf.Variable(tf.random_normal([1]), name='bias')
 X=tf.placeholder(tf.float32,shape=[None,n])
 Y=tf.placeholder(tf.float32,shape=[None, 1])
 
-
 #preparing the data
 def modify_input(x,x_size,n_value):
    x_new=np.zeros([x_size,n_value])    
