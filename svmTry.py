@@ -31,6 +31,8 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.4, random_
 
 kr = GridSearchCV(KernelRidge(kernel='rbf', gamma=0.1), cv=5,param_grid={"alpha": [1e0, 0.1, 1e-2, 1e-3],"gamma": np.logspace(-2, 2, 5)})
 
+kr_poly = GridSearchCV(KernelRidge(kernel='poly', gamma=0.1), cv=5,param_grid={"alpha": [1e0, 0.1, 1e-2, 1e-3],"gamma": np.logspace(-2, 2, 5)})
+
 svr_rbf = GridSearchCV(SVR(kernel='rbf', C=0.7), cv=5,param_grid={"C": [0.5, 0.6, 0.7],"gamma": np.logspace(-2, 2, 5)})
 
 svr_poly = GridSearchCV(SVR(kernel='poly', C=0.7, degree=4), cv=5,param_grid={"C": [0.5, 0.6, 0.7],"gamma": np.logspace(-2, 2, 5)})
